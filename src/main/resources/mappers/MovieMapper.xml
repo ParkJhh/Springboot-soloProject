@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.solo.mappers.MovieMapper">
+    <!-- 전체 멤버 이메일 확인 -->
+    <select id="memberInfo" resultType="com.kitri.solo.dto.MemberInfo" >
+        SELECT memberid, email FROM member
+    </select>
+    <!-- 멤버정보 추가 -->
+    <insert id="memberSave" parameterType="com.kitri.solo.dto.MemberInfo">
+        INSERT INTO member (
+            email, name, password, birthday, introduce
+        ) VALUES ( #{email}
+                 , #{name}
+                 , #{password}
+                 , #{birthday}
+                 , #{introduce})
+    </insert>
+</mapper>
