@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class MemberInfo {
     Long memberid;
 
@@ -27,16 +29,15 @@ public class MemberInfo {
 
     String passwordChk;
 
-    LocalDateTime birthday;
+    String birthday;
 
     @Size(max = 30, message = "자기소개는 최대 30자입니다.")
     String introduce;
 
-    public MemberInfo(String email, @NonNull String name, String password, String passwordChk, LocalDateTime birthday, String introduce) {
+    public MemberInfo(String email, @NonNull String name, String password, String birthday, String introduce) {
         this.email = email;
         this.name = name;
         this.password = password;
-        this.passwordChk = passwordChk;
         this.birthday = birthday;
         this.introduce = introduce;
     }

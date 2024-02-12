@@ -1,8 +1,11 @@
 package com.kitri.solo.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import com.kitri.solo.dto.MemberInfo;
 import com.kitri.solo.mappers.MovieMapper;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,7 +18,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/memberadd")
 public class MemberController {
-
+    @Autowired
     MovieMapper movieMapper;
 
     @GetMapping
@@ -23,22 +26,26 @@ public class MemberController {
         return "/member/memberadd";
     }
 
-    @PostMapping
-    public String readForm(@Valid MemberInfo form, BindingResult bindingResult){
+    @PostMapping("/chk")
+    public String readForm(@Valid MemberInfo form, BindingResult bindingResult, Model model){
+
         //에러발생
         if(bindingResult.hasErrors()){
-            return "/member/memberAdd";
+            model.addAttribute("memberError", "etc");
+            return "/member/memberError";
         }
         //패스워드 불일치
         if(!form.getPassword().equals(form.getPasswordChk())){
-            return "/member/memberPwFail";
+            model.addAttribute("memberError", "pwerror");
+            return "/member/memberError";
         }
         List<MemberInfo> members = movieMapper.memberInfo();
         //이메일 중복 체크
         for(MemberInfo entry : members){
             String email = entry.getEmail();
             if(email.equals(form.getEmail())){
-                return "/member/memberEmailFail";
+                model.addAttribute("memberError", "emailerror");
+                return "/member/memberError";
             }
         }
         //모든 체크를 통과하면 저장
