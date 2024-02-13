@@ -16,6 +16,7 @@
                     %>
                     <p class="nav-link" style="color: white" ><%=sessionMember.getName()%>님 환영합니다!</p>
                     <a class="nav-link" style="color: white" href="/login/logout">Logout!</a>
+                    <a class="nav-link" style="color: white" href="/member/mypage">My Page!</a>
                     <%} else {%>
                     <a class="nav-link" style="color: white" href="/memberadd">Join Us!</a>
                     <a class="nav-link" style="color: white" href="/login">Login Now!</a>

@@ -16,4 +16,20 @@
                  , #{birthday}
                  , #{introduce})
     </insert>
+
+    <update id="memberUpdate" parameterType="com.kitri.solo.dto.MemberInfo">
+        UPDATE member
+        SET
+            name = #{name},
+            password = #{password},
+            birthday = #{birthday},
+            introduce = #{introduce}
+        WHERE
+            email = #{email}
+    </update>
+
+    <delete id="memberDelete" parameterType="com.kitri.solo.dto.MemberInfo">
+        DELETE FROM member
+        WHERE memberid = #{memberid}
+    </delete>
 </mapper>

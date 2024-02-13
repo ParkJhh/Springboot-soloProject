@@ -9,17 +9,19 @@
 <%@include file="/WEB-INF/views/project/common/header.jsp"%>
 
 <div class="container">
-    <div class="title">Join Us!</div>
+    <div class="title">Update Your Infomation!</div>
     <div class="content">
-        <form action="/member/chk" method="post">
+        <form action="/member/nowUpdate" method="post">
             <div class="user-details">
                 <div class="input-box">
-                    <span class="details">이메일</span>
-                    <input type="text" name="email" id="email" placeholder="이메일 주소를 입력하세요" required>
+                    <span class="details">이메일(수정하실 수 없습니다.)</span>
+                    <input type="text" name="email" id="email" placeholder="이메일 주소를 입력하세요"
+                           value="<%=sessionMember.getEmail()%>" readonly>
                 </div>
                 <div class="input-box">
                     <span class="details">이름</span>
-                    <input type="text" name="name" id="name" placeholder="이름을 입력하세요" required>
+                    <input type="text" name="name" id="name" placeholder="이름을 입력하세요"
+                            value="<%=sessionMember.getName()%>" required>
                 </div>
                 <div class="input-box">
                     <span class="details">비밀번호</span>
@@ -37,15 +39,18 @@
                 </div>
                 <div class="input-box">
                     <span class="details">자기소개</span>
-                    <input type="text" name="introduce" id="introduce" placeholder="간단한 자기소개!(30자 이내입니다.)">
+                    <input type="text" name="introduce" id="introduce" value="<%=sessionMember.getIntroduce()%>">
                 </div>
             </div>
             <div class="button">
-                <input type="submit" value="가입하기">
+                <input type="submit" value="수정하기">
             </div>
         </form>
     </div>
 </div>
-<script></script>
+<script>
+    let memberError ='${memberError}'
+</script>
+<script src="/member/script.js"></script>
 </body>
 </html>

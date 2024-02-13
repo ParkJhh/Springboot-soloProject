@@ -60,10 +60,12 @@ public class LoginController {
             String emailChk = entry.getEmail();
             String passwordChk = entry.getPassword();
             String sessionName = entry.getName();
+            String sessionBirth = entry.getBirthday();
+            String sessionIntro = entry.getIntroduce();;
             if (emailChk.equals(email)) {
                 if (passwordChk.equals(password)) {
                     HttpSession session = req.getSession();
-                    MemberInfo sessionInfo = new MemberInfo(memberid, emailChk, passwordChk, sessionName);
+                    MemberInfo sessionInfo = new MemberInfo(memberid, emailChk, sessionName,sessionBirth,sessionIntro);
                     session.setAttribute("sessionId", sessionInfo);
                     //성공 메인페이지로
                     return "/main/main";

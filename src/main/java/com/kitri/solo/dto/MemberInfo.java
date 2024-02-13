@@ -42,10 +42,11 @@ public class MemberInfo {
         this.introduce = introduce;
     }
 
-    public MemberInfo(Long memberid, String email, @NonNull String name, String password) {
+    public MemberInfo(Long memberid, String email, @NonNull String name, String birthday, String introduce) {
         this.memberid = memberid;
         this.email = email;
         this.name = name;
-        this.password = password;
+        this.birthday = birthday;
+        this.introduce = introduce;
     }
 }

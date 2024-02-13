@@ -17,7 +17,7 @@
     <p style="color: crimson">입력양식의 일부가 잘못되었습니다. 확인하시기 바랍니다.</p>
     <%}%>
     <div class="content">
-        <form action="/memberadd/chk" method="post">
+        <form action="/member/chk" method="post">
             <div class="user-details">
                 <%
                     if(errorStr.equals("emailerror")){
@@ -78,6 +78,6 @@
 <script>
     let memberError ='${memberError}'
 </script>
-<script src ="/member/script.js"></script>
+<script src="/member/script.js"></script>
 </body>
 </html>
