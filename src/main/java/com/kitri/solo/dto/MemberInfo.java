@@ -41,4 +41,11 @@ public class MemberInfo {
         this.birthday = birthday;
         this.introduce = introduce;
     }
+
+    public MemberInfo(Long memberid, String email, @NonNull String name, String password) {
+        this.memberid = memberid;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+    }
 }

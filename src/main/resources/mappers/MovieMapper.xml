@@ -4,7 +4,7 @@
 <mapper namespace="com.kitri.solo.mappers.MovieMapper">
     <!-- 전체 멤버 이메일 확인 -->
     <select id="memberInfo" resultType="com.kitri.solo.dto.MemberInfo" >
-        SELECT memberid, email FROM member
+        SELECT * FROM member
     </select>
     <!-- 멤버정보 추가 -->
     <insert id="memberSave" parameterType="com.kitri.solo.dto.MemberInfo">
