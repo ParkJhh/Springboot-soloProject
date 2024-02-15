@@ -15,7 +15,11 @@
 <main id="main">
 
 </main>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
 
+    </ul>
+</nav>
 <script src="/main/script.js"></script>
 </body>
 </html>

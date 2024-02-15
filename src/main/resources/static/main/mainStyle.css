@@ -111,7 +111,6 @@ main {
     transform: translateY(0);
 }
 
-
 /*헤더 태그 css*/
 header > nav {
     justify-content: start;
