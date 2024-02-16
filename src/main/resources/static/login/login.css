@@ -65,8 +65,7 @@ form .field input:focus ~ label,
 form .field input:valid ~ label{
     top: 0%;
     font-size: 16px;
-    color: #4158d0;
-    background: #fff;
+    color: #999999;
     transform: translateY(-50%);
 }
 form .content{
@@ -113,7 +112,7 @@ form .signup-link{
 }
 form .pass-link a,
 form .signup-link a{
-    color: #4158d0;
+    color: white;
     text-decoration: none;
 }
 form .pass-link a:hover,

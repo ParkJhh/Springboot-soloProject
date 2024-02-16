@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/login/login.css" />
 <body>
 <%@include file="/WEB-INF/views/project/common/header.jsp"%>
-
+<div class="d-flex justify-content-center">
 <div class="wrapper">
     <div class="title">
         LOGIN FORM
@@ -22,7 +22,9 @@
         <div class="content">
             <div class="checkbox">
                 <%--체크시 "ON" 전달--%>
-                <input type="checkbox" id="rememberme" ${cookie.rememberme.value != "" ? 'checked' : ''}>이메일 주소 저장</input>
+                <input type="checkbox" id="rememberme" ${cookie.rememberme.value != "" ? 'checked' : ''}>
+                    <label id="rememberme">이메일 주소 저장</label>
+                </input>
             </div>
         </div>
         <div class="field">
@@ -34,7 +36,7 @@
         </div>
     </form>
 </div>
-
+</div>
 <script src="/login/script.js"></script>
 </body>
 </html>

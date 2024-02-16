@@ -18,9 +18,10 @@
                     <a class="nav-link" style="color: white" href="/login/logout">Logout!</a>
                     <a class="nav-link" style="color: white" href="/member/mypage">My Page!</a>
                     <%} else {%>
-                    <a class="nav-link" style="color: white" href="/memberadd">Join Us!</a>
+                    <a class="nav-link" style="color: white" href="/member">Join Us!</a>
                     <a class="nav-link" style="color: white" href="/login">Login Now!</a>
                     <%}%>
+                    <a class="nav-link" style="color: white" href="/board">Free Board!</a>
                     <a class="nav-link" style="color: white" href="/">use</a>
                 </div>
             </div>

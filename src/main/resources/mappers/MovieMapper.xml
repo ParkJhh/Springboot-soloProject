@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.kitri.solo.mappers.MovieMapper">
+    <sql id="boardColumns">
+        boardid, title, writer, created_at as createdAt, modified_at as modifiedAt, content, commentcount, likecount, memberid
+    </sql>
+
     <!-- 전체 멤버 이메일 확인 -->
     <select id="memberInfo" resultType="com.kitri.solo.dto.MemberInfo" >
         SELECT * FROM member
@@ -32,4 +36,10 @@
         DELETE FROM member
         WHERE memberid = #{memberid}
     </delete>
+
+    <!--게시판-->
+    <select id="boardInfo" resultType="com.kitri.solo.dto.ResponseDtoBoard">
+        SELECT <include refid="boardColumns"/> FROM board
+    </select>
+
 </mapper>
