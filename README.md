@@ -1,34 +1,29 @@
 스프링부트 솔로 프로젝트 
-movie 페이지 구현
+- movie 페이지 구현
+- 수업때 사용한 api페이지 활용
+- 추가로 https로 접속가능하게 하기
 
-영화 api 정보 보여주기
-회원가입
-로그인
-자유게시판
-영화에 따른 게시판 또는 영화에 따른 한줄평
-그외 추가할게 있다면 추가?
+## 1.프로젝트 구성 및 기능
+- 메인페이지
+  - 메인페이지 전체 조회
+  - 메인페이지에서 페이지 버튼 클릭시 다음 api를 호출하여 메인페이지 재구성(페이지네이션)
 
-https 관련 메모
+- 로그인
+  - 로그인 및 쿠키 생성(현재 불완전)
+  - 로그인 체크
 
-폴더> 인텔리제이 jdk 17 
-C:\Users\kitri\.jdks\corretto-17.0.10\bin
+- 회원 가입
+  - 회원가입 및 입력데이터 체크 설정
+  - 회원 컨트롤러 및 dto를 통해 입력 데이터 체크
+  - 회원가입 실패시 에러문구가 추가된 페이지로 이동
+  - 회원가입 성공시 로그인 페이지로 이동 가능
 
-관리자 권한으로 cmd/powershell 실행
-키스토어 생성
-keytool -genkey -alias solotest -keyalg RSA -keystore solotest.pkcs12 -storetype pkcs12
+- 마이페이지
+  - 내 정보 수정페이지 추가 및 회원정보 수정 매퍼/ 쿼리 추가
+  - 회원탈퇴 페이지 추가 및 스크립트로 회원탈퇴 의사 확인 추가
+  - 회원 탈퇴 매퍼/쿼리 추가
 
-키스토어 확인
-keytool -list -v -keystore solotest.pkcs12
-
-키스토어에서 인증서 추출
-keytool -export -alias solotest -keystore solotest.pkcs12 -rfc -file solotest.cer
-
-인증서추출 확인
-type solotest.cer
-
-트러스트스토어 새성
-keytool -import -alias solotesttrust -file solotest.cer -keystore solotesttrust.pkcs12
-
-application.properties에 SSL 설정 후 https://localhost:8080/ 로 접속
-주의요함으로 뜨는데? > 인증기관이 만든 인증서에 대해 인지할수 있는 퍼블릭 키 를 모르기때문에 주의요함으로 뜨게 된다
-Tomcat initialized with port 8080 (https) 를 통해 https가 설정되어있음을 눈으로 확인
+- 자유게시판 (진행중)
+  -  보드컨트롤러(RESTAPI?)
+  - 매퍼 / 보드DB / 댓글DB / 대댓글DB?
+  - 게시글 목록 / 게시글 상세 / 게시글에 달린 댓글 보여주기

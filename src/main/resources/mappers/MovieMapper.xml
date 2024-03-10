@@ -3,7 +3,7 @@
 
 <mapper namespace="com.kitri.solo.mappers.MovieMapper">
     <sql id="boardColumns">
-        boardid, title, writer, created_at as createdAt, modified_at as modifiedAt, content, commentcount, likecount, memberid
+        boardid, title, writer, created_at as createdAt, modified_at as modifiedAt, content, commentcount, likecount, viewcount, memberid
     </sql>
 
     <!-- 전체 멤버 이메일 확인 -->

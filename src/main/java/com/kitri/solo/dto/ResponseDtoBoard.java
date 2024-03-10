@@ -16,5 +16,6 @@ public class ResponseDtoBoard {
     String content;
     Long commentcount;
     Long likecount;
+    Long viewcount;
     Long memberid;
 }
